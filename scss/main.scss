@@ -3,3 +3,62 @@
 	margin: 0px;
 	padding: 0px;
 }
+
+ul{
+	list-style: none;
+}
+
+.header-section	{
+	margin: 30px;
+	text-align: center;
+}
+
+.form-section {
+	padding: 30px;
+	display: flex;
+	justify-content: center;
+}
+
+.input-radio {
+	padding-right: 10px;
+}
+
+.label-radio {
+	padding-right: 5px;
+}
+
+.button-submit {
+	padding-left: 3px;
+	padding-right: 3px;
+	background-color: white;
+	border: 1px solid teal;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.hidden {
+	display: none;
+}
+
+.card-list {
+	display: grid;
+	grid-template-columns: repeat(4, 160px);
+	grid-template-rows: repeat(2, 195px);
+	grid-gap: 20px;
+	justify-content: center
+}
+
+.card-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+// .card-img-back {
+// 	display: none;
+// }
+
+// .card-img-front {
+// 	display: none;
+// }

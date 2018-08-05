@@ -11,7 +11,12 @@ function handleInputChange() {
   urlForFetch = 'https://raw.githubusercontent.com/Adalab/cards-data/master/'+ event.target.value +'.json';
 }
 
-
+function handleCardItemClick(){
+  var itemClickedImg = event.currentTarget.children;
+  for (var x=0; x < itemClickedImg.length; x++){
+    itemClickedImg[x].classList.toggle('hidden');
+  }
+}
 
 function askForCards (){
   fetch(urlForFetch)
@@ -38,11 +43,10 @@ function createListOfCards() {
 
     newCardItem.setAttribute('class','card-item');
 
-    
     newCardImageFront.setAttribute('src',imgCardUrl);
     newCardImageFront.setAttribute('class','card-img-front');
+    newCardImageFront.classList.add('hidden');
     newCardImageFront.setAttribute('alt','pokemon');
-
     
     newCardImageBack.setAttribute('src','https://via.placeholder.com/160x195/30d9c4/ffffff/?text=ADALAB');
     newCardImageBack.setAttribute('class','card-img-back');
@@ -53,13 +57,17 @@ function createListOfCards() {
 
     return cardList.appendChild(newCardItem);
   });
+  
+  var cardItem = document.querySelectorAll('.card-item');
+  for (var k = 0; k < cardItem.length; k++){
+    cardItem[k].addEventListener('click', handleCardItemClick);
+  }
 }
 
 function handleClick (){
   console.log('estoy clickando');
   event.preventDefault();
   askForCards();
-  
 }
 
 
